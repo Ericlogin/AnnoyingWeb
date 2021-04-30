@@ -1,0 +1,22 @@
+shell:
+
+User.objects.all() 查询所有用户
+User.objects.first() 查询首个用户
+User.objects.filter(username='test202') 使用过滤器匹配相同字段的结果
+User.objects.filter(username='test202') 显示首个结果
+使用变量声明的方式创建 post1 = Post(...)
+记得要用save保存：post1.save()
+
+<img class="rounded-circle article-img" src="{{ post.author.profile.image.url }}">
+
+	{
+		'teamLeader': 'Qiu Jing',
+		'teamName': 'YYDS',
+		'teamID': '777777',
+		'numOfPeople': 3,
+		'stillNeed': 6,
+		'skills': 'python',
+		'date': 'Apr 26, 2021'
+	}
+
+post3 = Post(teamLeader='Junzhan Zhang', teamName='Apple Inc', teamID='666666', numOfPeople=4, stillNeed=5, skills='C++, matlab', user=user1)

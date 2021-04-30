@@ -1,0 +1,51 @@
+{% extends "blog/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}	
+	<div class="media">
+	    <img class="rounded-circle account-img" src="{{ user.profile.image.url }}">
+	    <div class="media-body">
+	    	<h2 class="account-heading">Wenzhuo Sun</h2>
+	    	<p class="text-secondary">Wenzhuo Sun18@student.xjtlu.edu.cn</p>
+	    	<p class="text-secondary">Team Skills: C++, python, matlab</p>
+	    	<a class="btn btn-primary" href="{% url 'blog-detailsSA' %}" role="button">Add member</a>
+	    	<a class="btn btn-primary" href="{% url 'blog-detailsSH' %}" role="button">Hide this team</a>
+	    </div>
+	 </div>
+	<legend class="border-bottom mb-4">Group Information</legend>
+	<div class="form-group">
+		<h5>Group member 1</h5>
+		<p>Name:AAA</p>
+		<p>ID:111</p>
+		<p>Skills: C++</p>
+		<legend class="border-bottom mb-4"></legend>
+
+		<h5>Group member 2</h5>
+		<p>Name:AAA</p>
+		<p>ID:111</p>
+		<p>Skills: Python</p>
+		<legend class="border-bottom mb-4"></legend>
+
+		<h5>Group member 3</h5>
+		<p>Name:AAA</p>
+		<p>ID:111</p>
+		<p>Skills: Matlab</p>
+		<legend class="border-bottom mb-4"></legend>
+
+		<div class="input-group">
+		  <div class="input-group-prepend">
+		    <span class="input-group-text">Comment</span>
+		  </div>
+		  <textarea class="form-control" aria-label="With textarea"></textarea>
+		</div>
+		<p></p>
+		<a class="btn btn-primary" href="{% url 'blog-detailsL2' %}" role="button">Comment</a>
+	</div>
+{% endblock content %}
+
+
+
+
+
+
+
+

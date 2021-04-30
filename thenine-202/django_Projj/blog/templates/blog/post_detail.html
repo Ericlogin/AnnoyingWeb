@@ -1,0 +1,50 @@
+{% extends "blog/base.html" %}
+
+{% block content %}
+	<div class="dropdown">
+	  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	    Default
+	  </button>
+	  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+	    <a class="dropdown-item" href="{% url 'blog-java' %}">Java</a>
+	    <a class="dropdown-item" href="{% url 'blog-python' %}">Python</a>
+	    <a class="dropdown-item" href="{% url 'blog-c' %}">C++</a>
+	    <a class="dropdown-item" href="{% url 'blog-matlab' %}">Matlab</a>
+	    
+	  </div>
+	</div>
+
+	
+		<article class="media content-section">
+		  <div class="media-body">
+		    <div class="article-metadata">
+		      <a class="mr-2" href="#">{{ object.teamName }}</a>
+		      <small class="text-muted">Posted on: {{ object.date|date:"F d, Y" }}</small>
+
+		      {% if object.user == user %}
+		      <div>
+		      	<a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'post-update' object.id %}">Update</a>
+		      	<a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'post-delete' object.id %}">Delete</a>
+		      </div>
+		      <div>
+		      	<a class="btn btn-warning btn-sm mt-1 mb-1" style="float:right" href="#">Hide this team</a>
+		      </div>
+				
+			  
+		      {% endif %}
+
+		    </div>
+		    <h2 class="article-title">Leader: {{ object.teamLeader }}</h2>
+		    <p class="article-content">Team ID: {{ object.teamID }}</p>
+		    <p class="article-content">{{ object.numOfPeople }} people already</p>
+
+		    {% if object.numOfPeople == 9   %}
+		    	<p class="article-content">No Need</p>
+			{% else %}
+				<p class="article-content">Still Need: {{ object.stillNeed }} people</p>
+			{% endif %}
+			<p class="article-content">Team skills: {{ object.skills }}</p>
+		  </div>
+		</article>
+{% endblock content %}
+

@@ -1,0 +1,22 @@
+{% extends "blog/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}	
+	<div class="media">
+	    <img class="rounded-circle account-img" src="{{ user.profile.image.url }}">
+	    <div class="media-body">
+	    	<h2 class="account-heading">Wenzhuo Sun</h2>
+	    	<p class="text-secondary">Wenzhuo Sun18@student.xjtlu.edu.cn</p>
+	    	<p class="text-secondary">Team Skills: C++, python, matlab, Mysql</p>
+	    	<a class="btn btn-primary" href="{% url 'blog-detailsSE' %}" role="button">Show back this team</a>
+	    </div>
+	 </div>
+
+{% endblock content %}
+
+
+
+
+
+
+
+

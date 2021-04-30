@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="ltd.thenine.dao.ISave_teamDao">
+    <resultMap id="BaseResultMap" type="ltd.thenine.entity.Team">
+    </resultMap>
+    <insert id="save_team" parameterType="ltd.thenine.entity.Team">
+        insert into Team(name,leader_name,scope,image_id)
+        values (#{name},#{leader_name},#{scope},#{image_id})
+    </insert>
+
+    <select id="check_team_deplication" resultMap="BaseResultMap" parameterType="ltd.thenine.entity.Team">
+        SELECT * from Team where name = #{name};
+    </select>
+
+    <select id="get_team_id" resultMap="BaseResultMap" parameterType="ltd.thenine.entity.Team">
+        SELECT team_id from User where name = #{name};
+    </select>
+
+
+</mapper>

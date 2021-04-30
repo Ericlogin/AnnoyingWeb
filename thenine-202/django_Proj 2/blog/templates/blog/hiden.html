@@ -1,0 +1,14 @@
+{% extends "blog/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}	
+		<article class="media content-section">
+		  <div class="media-body">
+		    <div class="article-metadata">
+		      <a class="mr-2" href="#">Hello World</a>
+		      <small class="text-muted">Creation time: Mar 3, 2021</small>
+		    </div>
+		    <h2><a class="article-title" href="{% url 'blog-detailsL' %}">Leader: Wenzhuo Sun</a></h2>
+		    <p class="article-content">Team ID: 34575</p>
+		    <a class="btn btn-primary" href="{% url 'blog-detailsSE' %}" role="button">Show back this team</a>
+		</article>
+{% endblock content %}

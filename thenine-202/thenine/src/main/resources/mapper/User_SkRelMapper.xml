@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="ltd.thenine.dao.IUser_SkRelDao">
+    <resultMap id="BaseResultMap" type="ltd.thenine.entity.User_SkRel">
+    </resultMap>
+
+    <select id="searchUser" resultMap="BaseResultMap" parameterType="ltd.thenine.entity.User_SkRel">
+        SELECT *
+        from User_SkRel
+        where skill_id = #{skill_id};
+    </select>
+
+</mapper>

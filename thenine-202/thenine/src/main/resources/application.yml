@@ -1,0 +1,45 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: "CPT202@the9"
+    url: jdbc:mysql://localhost:3306/test?serverTimezone=UTC&useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&useSSL=true
+  mail:
+    default-encoding: utf-8
+    # 主机地址
+    host: smtp.qq.com
+    # 邮箱名
+    username: 2565246797@qq.com
+    # 授权码（不是密码）
+    password: drhzolgripoydjbh
+    port: 456
+    protocol: smtp
+    properties:
+      mail:
+        smtp:
+          socketFactory:
+            port: 465
+            class: javax.net.ssl.SSLSocketFactory
+            fallback: false
+          auth: true
+          starttls:
+            enable: ture
+            required: true
+
+
+
+
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: ltd.thenine.entity
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+server:
+  port: 443
+  ssl:
+    key-store: classpath:thenine.ltd.jks
+    key-password: 410ul43xt9170
+    key-store-type: JKS
+    key-store-password: 410ul43xt9170

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="ltd.thenine.dao.ISave_user_roRelDao">
+    <resultMap id="BaseResultMap" type="ltd.thenine.entity.User_RoRel">
+    </resultMap>
+    <insert id="save_user_roRel" parameterType="ltd.thenine.entity.User_RoRel">
+        insert into User_RoRel(role_id,user_id)
+        values (#{role_id},#{user_id})
+    </insert>
+</mapper>

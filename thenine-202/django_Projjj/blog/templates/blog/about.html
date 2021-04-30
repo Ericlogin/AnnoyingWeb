@@ -1,0 +1,73 @@
+{% extends "blog/base.html" %}
+
+{% block content %}	
+	<p>
+		<h2>Production staff list (in no particular order): </h2>
+		<h3></h3>
+		<h3></h3>
+		<h3></h3>
+		<h3></h3>
+	</p>
+
+	<div class="accordion" id="accordionExample">
+	  <div class="card">
+	    <div class="card-header alert alert-primary" id="headingOne">
+	      <h2 class="mb-0">
+	        <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+	          Project Owner: 
+	        </button>
+	      </h2>
+	    </div>
+
+	    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+	      <div class="card-body">
+	        Juncheng Liu
+	      </div>
+	    </div>
+	  </div>
+	  <div class="card">
+	    <div class="card-header alert alert-success" id="headingTwo">
+	      <h2 class="mb-0">
+	        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+	          Scrum Master: 
+	        </button>
+	      </h2>
+	    </div>
+	    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+	      <div class="card-body">
+	        Wenzhuo Sun 
+	      </div>
+	    </div>
+	  </div>
+	  <div class="card">
+	    <div class="card-header alert alert-warning" id="headingThree">
+	      <h2 class="mb-0">
+	        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+	          Front-end developers: 
+	        </button>
+	      </h2>
+	    </div>
+	    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+	      <div class="card-body">
+	        Siqi Xie, Luyan Jiang, Hanxi Zhang
+	      </div>
+	    </div>
+	  </div>
+	  <div class="card">
+	    <div class="card-header alert alert-info" id="headingThree">
+	      <h2 class="mb-0">
+	        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+	          Back-end developers: 
+	        </button>
+	      </h2>
+	    </div>
+	    <div id="collapseFour" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+	      <div class="card-body">
+	        Jiyao Zhang, Dongyue Zhu, Qiu Jing, Junzhan Zhang
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	<div class="media">
+</div>
+{% endblock content %}

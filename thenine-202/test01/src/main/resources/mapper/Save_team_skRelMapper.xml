@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="ltd.thenine.dao.ISave_team_skRelDao">
+    <resultMap id="BaseResultMap" type="ltd.thenine.entity.Team_SkRel">
+    </resultMap>
+    <insert id="save_team_skRel" parameterType="ltd.thenine.entity.Team_SkRel">
+        insert into Team_SkRel(number,skill_id,team_id)
+        values (#{number},#{skill_id},#{team_id})
+    </insert>
+</mapper>

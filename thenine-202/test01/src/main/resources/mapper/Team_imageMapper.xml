@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="ltd.thenine.dao.ITeam_imageDao">
+    <resultMap id="BaseResultMap" type="ltd.thenine.entity.Team_image">
+    </resultMap>
+
+    <select id="selectImg" resultMap="BaseResultMap" parameterType="ltd.thenine.entity.Team_image">
+        SELECT *
+        from Team_image
+        where image_id = #{image_id};
+    </select>
+
+</mapper>

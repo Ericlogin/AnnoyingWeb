@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="ltd.thenine.dao.ISave_userDao">
+    <resultMap id="BaseResultMap" type="ltd.thenine.entity.User">
+    </resultMap>
+    <insert id="save_user_info" parameterType="ltd.thenine.entity.User">
+        update User
+        set name=#{name},major=#{major},phone=#{phone},photo_id=#{photo_id},experience_description=#{experience_description}
+        where user_id=#{user_id}
+    </insert>
+
+    <select id="check_have_team" resultMap="BaseResultMap" parameterType="ltd.thenine.entity.User">
+        SELECT * from User where name = #{leader_name};
+    </select>
+
+
+
+
+</mapper>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="ltd.thenine.dao.ITeam_SkRelDao">
+    <resultMap id="BaseResultMap" type="ltd.thenine.entity.Team_SkRel">
+    </resultMap>
+
+    <select id="searchTeam" resultMap="BaseResultMap" parameterType="ltd.thenine.entity.Team_SkRel">
+        SELECT *
+        from Team_SkRel
+        where skill_id = #{skill_id};
+    </select>
+
+    <select id="searchSkill" resultMap="BaseResultMap" parameterType="ltd.thenine.entity.Team_PoRel">
+        SELECT *
+        from Team_SkRel
+        where team_id = #{team_id};
+    </select>
+
+</mapper>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="ltd.thenine.dao.IUserDao">
+    <resultMap id="BaseResultMap" type="ltd.thenine.entity.User">
+    </resultMap>
+    <select id="login" resultMap="BaseResultMap" parameterType="ltd.thenine.entity.User">
+        SELECT *
+        from User
+        where email = #{email}
+          and password = #{password};
+    </select>
+
+    <insert id="sendmail" parameterType="ltd.thenine.entity.User">
+        INSERT INTO User (email, verifycode) VALUE (#{email}, #{verifycode});
+    </insert>
+
+    <select id="verify" resultMap="BaseResultMap" parameterType="ltd.thenine.entity.User">
+        SELECT * from User where email = #{email} and verifycode = #{verifycode};
+    </select>
+
+    <update id="register" parameterType="ltd.thenine.entity.User">
+        UPDATE User SET password = #{password} WHERE email = #{email};
+    </update>
+
+    <select id="exist" resultMap="BaseResultMap" parameterType="ltd.thenine.entity.User">
+        SELECT *
+        from User
+        where email = #{email};
+    </select>
+
+    <update id="updateVerifycode" parameterType="ltd.thenine.entity.User">
+        UPDATE User SET verifycode = #{verifycode} WHERE email = #{email};
+    </update>
+
+    <select id="getInfo" resultMap="BaseResultMap" parameterType="ltd.thenine.entity.User">
+        SELECT * from User where user_id = #{user_id};
+    </select>
+
+    <update id="updateInfo" parameterType="ltd.thenine.entity.User">
+        UPDATE User
+        SET
+        `name` = #{name} and
+        grade = #{grade} and
+        major = #{major} and
+        phone = #{phone} and
+        signature = #{signature} and
+        experience_description = #{experience_description}
+        WHERE user_id = #{user_id};
+    </update>
+
+</mapper>

@@ -1,0 +1,38 @@
+{% extends "blog/base.html" %}
+
+{% block content %}
+	<div class="dropdown">
+	  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	    Default
+	  </button>
+	  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+	    <a class="dropdown-item" href="{% url 'blog-java' %}">Java</a>
+	    <a class="dropdown-item" href="{% url 'blog-python' %}">Python</a>
+	    <a class="dropdown-item" href="{% url 'blog-c' %}">C++</a>
+	    <a class="dropdown-item" href="{% url 'blog-matlab' %}">Matlab</a>
+	    
+	  </div>
+	</div>
+
+	{% for post in posts %}
+		<article class="media content-section">
+		  <div class="media-body">
+		    <div class="article-metadata">
+		      <a class="mr-2" href="#">{{ post.teamName }}</a>
+		      <small class="text-muted">Creation time: {{ post.date }}</small>
+		    </div>
+		    <h2><a class="article-title" href="{% url 'blog-detailsS' %}">Leader: {{ post.teamLeader }}</a></h2>
+		    <p class="article-content">Team ID: {{ post.teamID }}</p>
+		    <p class="article-content">{{ post.numberOfPeople }} people already</p>
+
+		    {% if post.numberOfPeople == 9   %}
+		    	<p class="article-content">No Need</p>
+			{% else %}
+				<p class="article-content">Still Need: {{ post.stillNeed }} people</p>
+			{% endif %}
+			<p class="article-content">Team skills: {{ post.skills }}</p>
+		  </div>
+		</article>
+	{% endfor %}
+{% endblock content %}
+

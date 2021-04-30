@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="ltd.thenine.dao.ITeamDao">
+    <resultMap id="BaseResultMap" type="ltd.thenine.entity.Team">
+    </resultMap>
+
+    <select id="selectTeam" resultMap="BaseResultMap" parameterType="ltd.thenine.entity.Team">
+        SELECT *
+        from Team
+        where team_id = #{team_id};
+    </select>
+
+    <select id="selectAll" resultMap="BaseResultMap" parameterType="ltd.thenine.entity.Team">
+        SELECT *
+        from Team;
+    </select>
+
+</mapper>
